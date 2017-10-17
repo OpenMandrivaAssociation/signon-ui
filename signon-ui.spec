@@ -20,6 +20,9 @@ BuildRequires:  qt5-designer
 BuildRequires:  qt5-linguist
 BuildRequires:  qt5-linguist-tools
 BuildRequires:  cmake(Qt5Test)
+BuildRequires:  cmake(Qt5Quick)
+BuildRequires:  cmake(Qt5WebKit)
+BuildRequires:  cmake(Qt5WebKitWidgets)
 BuildRequires:	qtchooser
 BuildRequires:	doxygen
 BuildRequires:	graphviz
