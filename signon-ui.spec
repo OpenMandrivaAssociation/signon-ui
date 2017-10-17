@@ -28,6 +28,7 @@ BuildRequires:	doxygen
 BuildRequires:	graphviz
 BuildRequires:	pkgconfig(signon-plugins)
 BuildRequires:	pkgconfig(signon-plugins-common)
+BuildRequires:	pkgconfig(libnotify)
 %rename	%{name}
 Requires:	dbus
 Suggests:	signond
