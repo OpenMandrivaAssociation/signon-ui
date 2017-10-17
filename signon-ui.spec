@@ -29,6 +29,8 @@ BuildRequires:	graphviz
 BuildRequires:	pkgconfig(signon-plugins)
 BuildRequires:	pkgconfig(signon-plugins-common)
 BuildRequires:	pkgconfig(libnotify)
+BuildRequires:	pkgconfig(libproxy-1.0)
+BuildRequires:	pkgconfig(accounts-qt5)
 %rename	%{name}
 Requires:	dbus
 Suggests:	signond
