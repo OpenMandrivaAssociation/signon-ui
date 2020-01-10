@@ -45,7 +45,7 @@ client library for applications to communicate with this system.
 
 %prep
 %setup -q
-%apply_patches
+%autopatch -p1
 %qmake_qt5 CONFIG+=debug_and_release LIBDIR=%{_libdir} PREFIX=%{_prefix}
 
 %build
