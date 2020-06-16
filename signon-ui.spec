@@ -58,3 +58,4 @@ client library for applications to communicate with this system.
 %files
 %{_bindir}/signon-ui
 %{_datadir}/dbus-1/services/*
+%{_datadir}/applications/*.desktop
