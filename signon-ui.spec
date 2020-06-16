@@ -1,6 +1,6 @@
 # signon-ui doesn't seem to make releases except
 # in the form of ubuntu packages
-%define snapshot 20170809
+%define snapshot 20200616
 %define debug_package %{nil}
 
 Name:		signon-ui
@@ -9,20 +9,21 @@ Release:	0.%{snapshot}.1
 Group:		System/Libraries
 Summary:	A framework for centrally storing authentication credentials
 License:	LGPLv2
-URL:		http://gitlab.com/accounts-sso/
-# https://gitlab.com/accounts-sso/signon-ui.git
+URL:		http://gitlab.com/accounts-sso/signon-ui
+# git clone https://gitlab.com/accounts-sso/signon-ui.git
+# git archive --format=tar --prefix signon-ui-0.17/ HEAD | xz -9 > signon-ui-0.17-$(date +%Y%m%d).tar.xz
 Source0:	signon-ui-%{version}-%{snapshot}.tar.xz
 BuildRequires:	qt5-devel
 BuildRequires:	qt5-qttools
-BuildRequires:  qt5-qttools-qtdbus
-BuildRequires:  qt5-assistant
-BuildRequires:  qt5-designer
-BuildRequires:  qt5-linguist
-BuildRequires:  qt5-linguist-tools
-BuildRequires:  cmake(Qt5Test)
-BuildRequires:  cmake(Qt5Quick)
-BuildRequires:  cmake(Qt5WebKit)
-BuildRequires:  cmake(Qt5WebKitWidgets)
+BuildRequires:	qt5-qttools-qtdbus
+BuildRequires:	qt5-assistant
+BuildRequires:	qt5-designer
+BuildRequires:	qt5-linguist
+BuildRequires:	qt5-linguist-tools
+BuildRequires:	cmake(Qt5Test)
+BuildRequires:	cmake(Qt5Quick)
+BuildRequires:	cmake(Qt5WebKit)
+BuildRequires:	cmake(Qt5WebKitWidgets)
 BuildRequires:	qtchooser
 BuildRequires:	doxygen
 BuildRequires:	graphviz
@@ -49,10 +50,10 @@ client library for applications to communicate with this system.
 %qmake_qt5 CONFIG+=debug_and_release LIBDIR=%{_libdir} PREFIX=%{_prefix}
 
 %build
-%make
+%make_build
 
 %install
-%makeinstall_std INSTALL_ROOT=%{buildroot}
+%make_install INSTALL_ROOT=%{buildroot}
 
 %files
 %{_bindir}/signon-ui
