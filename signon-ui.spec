@@ -13,7 +13,7 @@ URL:		http://gitlab.com/accounts-sso/signon-ui
 # git clone https://gitlab.com/accounts-sso/signon-ui.git
 # git archive --format=tar --prefix signon-ui-0.17/ HEAD | xz -9 > signon-ui-0.17-$(date +%Y%m%d).tar.xz
 Source0:	signon-ui-%{version}-%{snapshot}.tar.xz
-Patch0:		https://git.archlinux.org/svntogit/packages.git/plain/trunk/fake-user-agent.patch?h=packages/signon-ui
+Patch0:		https://git.archlinux.org/svntogit/packages.git/plain/trunk/fake-user-agent.patch
 BuildRequires:	qt5-devel
 BuildRequires:	qt5-qttools
 BuildRequires:	qt5-qttools-qtdbus
