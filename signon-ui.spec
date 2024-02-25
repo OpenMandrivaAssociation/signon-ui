@@ -1,18 +1,18 @@
 # signon-ui doesn't seem to make releases except
 # in the form of ubuntu packages
-%define snapshot 20200616
+%define snapshot 20240225
 %define debug_package %{nil}
 
 Name:		signon-ui
 Version:	0.17
-Release:	0.%{snapshot}.2
+Release:	0.%{snapshot}.1
 Group:		System/Libraries
 Summary:	A framework for centrally storing authentication credentials
 License:	LGPLv2
 URL:		http://gitlab.com/accounts-sso/signon-ui
 # git clone https://gitlab.com/accounts-sso/signon-ui.git
 # git archive --format=tar --prefix signon-ui-0.17/ HEAD | xz -9 > signon-ui-0.17-$(date +%Y%m%d).tar.xz
-Source0:	signon-ui-%{version}-%{snapshot}.tar.xz
+Source0:	https://gitlab.com/accounts-sso/signon-ui/-/archive/master/signon-ui-master.tar.bz2#/signon-ui-%{snapshot}.tar.bz2
 Patch0:		https://git.archlinux.org/svntogit/packages.git/plain/trunk/fake-user-agent.patch
 BuildRequires:	qt5-devel
 BuildRequires:	qt5-qttools
@@ -32,8 +32,8 @@ BuildRequires:	pkgconfig(signon-plugins)
 BuildRequires:	pkgconfig(signon-plugins-common)
 BuildRequires:	pkgconfig(libnotify)
 BuildRequires:	pkgconfig(libproxy-1.0)
-BuildRequires:	pkgconfig(accounts-qt5)
-BuildRequires:	pkgconfig(libsignon-qt5)
+BuildRequires:	pkgconfig(accounts-qt6)
+BuildRequires:	pkgconfig(libsignon-qt6)
 %rename	%{name}
 Requires:	dbus
 Suggests:	signond
@@ -46,9 +46,8 @@ usernames and passwords), plugins for different authentication systems and a
 client library for applications to communicate with this system.
 
 %prep
-%setup -q
-%autopatch -p1
-%qmake_qt5 CONFIG+=debug_and_release LIBDIR=%{_libdir} PREFIX=%{_prefix}
+%autosetup -p1 -n %{name}-master
+%{_qtdir}/bin/qmake CONFIG+=debug_and_release LIBDIR=%{_libdir} PREFIX=%{_prefix}
 
 %build
 %make_build
