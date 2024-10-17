@@ -9,7 +9,7 @@ Release:	0.%{snapshot}.1
 Group:		System/Libraries
 Summary:	A framework for centrally storing authentication credentials
 License:	LGPLv2
-URL:		http://gitlab.com/accounts-sso/signon-ui
+URL:		https://gitlab.com/accounts-sso/signon-ui
 # git clone https://gitlab.com/accounts-sso/signon-ui.git
 # git archive --format=tar --prefix signon-ui-0.17/ HEAD | xz -9 > signon-ui-0.17-$(date +%Y%m%d).tar.xz
 Source0:	https://gitlab.com/accounts-sso/signon-ui/-/archive/master/signon-ui-master.tar.bz2#/signon-ui-%{snapshot}.tar.bz2
